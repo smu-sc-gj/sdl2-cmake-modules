@@ -1,5 +1,8 @@
 # SDL2 CMake modules
 
+**Updated:** - GLJ 27-2-2020
+    - The original version doesn't work on Windows, taking out one of the changes (related to Threads) to see if this is the issue.  It certainlty seems there is something SDL2 related going on.
+
 This repository contains [CMake][] modules for finding and using the SDL2
 library as well as other related libraries:
 
