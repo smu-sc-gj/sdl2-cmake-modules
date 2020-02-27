@@ -235,20 +235,23 @@ endif()
 # The Apple build may not need an explicit flag because one of the
 # frameworks may already provide it.
 # But for non-OSX systems, I will use the CMake Threads package.
+# GLJ - Did not work on Windows, Threads are found but 
+# the flags checked here are never set under windows. 
 if(NOT APPLE)
-  find_package(Threads QUIET)
-  if(NOT Threads_FOUND)
-    set(SDL2_THREADS_NOT_FOUND "Could NOT find Threads (Threads is required by SDL2).")
-    if(SDL2_FIND_REQUIRED)
-      message(FATAL_ERROR ${SDL2_THREADS_NOT_FOUND})
-    else()
-        if(NOT SDL2_FIND_QUIETLY)
-          message(STATUS ${SDL2_THREADS_NOT_FOUND})
-        endif()
-      return()
-    endif()
-    unset(SDL2_THREADS_NOT_FOUND)
-  endif()
+   find_package(Threads)
+#  find_package(Threads QUIET)
+#  if(NOT Threads_FOUND)
+#    set(SDL2_THREADS_NOT_FOUND "Could NOT find Threads (Threads is required by SDL2).")
+#    if(SDL2_FIND_REQUIRED)
+#      message(FATAL_ERROR ${SDL2_THREADS_NOT_FOUND})
+#    else()
+#        if(NOT SDL2_FIND_QUIETLY)
+#          message(STATUS ${SDL2_THREADS_NOT_FOUND})
+#       endif()
+#      return()
+#    endif()
+#    unset(SDL2_THREADS_NOT_FOUND)
+#  endif()
 endif()
 
 # MinGW needs an additional link flag, -mwindows
