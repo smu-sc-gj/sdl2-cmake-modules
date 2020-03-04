@@ -2,6 +2,11 @@
 
 **Updated:** - GLJ 27-2-2020
     - The original version doesn't work on Windows, taking out one of the changes (related to Threads) to see if this is the issue.  It certainlty seems there is something SDL2 related going on.
+ 
+**TODO**
+    - This version uses the machine type to find the correct SDL2.dll version to link against (x86/x64) would be better to get this from the build system as there is we might want to compile for x86 on a x64 system. 
+    
+# ORIGINAL README FOLLOWS #
 
 This repository contains [CMake][] modules for finding and using the SDL2
 library as well as other related libraries:
